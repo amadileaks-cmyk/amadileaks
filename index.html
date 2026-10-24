@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Amadi Leaks — Blog, Newsletter & Ghostwriting for Small Businesses</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1F241F;
+    --ink-soft:#3A3F38;
+    --gold:#C9A24B;
+    --gold-deep:#A47F2E;
+    --sage:#6E8266;
+    --cream:#F8F5EE;
+    --line: rgba(31,36,31,0.12);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html,body{font-family:'Inter',sans-serif; color:var(--ink); background:var(--cream); scroll-behavior:smooth;}
+  h1,h2,h3{font-family:'Playfair Display', serif; font-weight:600;}
+  a{text-decoration:none; color:inherit;}
+  .wrap{max-width:1140px; margin:0 auto; padding:0 32px;}
+
+  /* NAV */
+  nav{position:sticky; top:0; z-index:50; background:rgba(248,245,238,0.94); backdrop-filter:blur(6px); border-bottom:1px solid var(--line);}
+  nav .wrap{display:flex; align-items:center; justify-content:space-between; height:84px;}
+  .logo{font-family:'Playfair Display',serif; font-size:21px; letter-spacing:1.5px; font-weight:700; color:var(--ink);}
+  .logo span{color:var(--gold-deep);}
+  .navlinks{display:flex; gap:38px; font-size:13.5px; letter-spacing:0.4px; text-transform:uppercase; font-weight:600; color:var(--ink-soft);}
+  .navlinks a:hover{color:var(--gold-deep);}
+  .nav-cta{background:var(--ink); color:#fff; padding:12px 24px; border-radius:100px; font-size:13px; font-weight:600; letter-spacing:0.4px;}
+
+  /* HERO */
+  .hero{position:relative; overflow:hidden; padding:110px 0 90px; background:
+    radial-gradient(circle at 88% 12%, rgba(201,162,75,0.16) 0%, rgba(201,162,75,0) 45%),
+    radial-gradient(circle at 8% 90%, rgba(110,130,102,0.18) 0%, rgba(110,130,102,0) 45%),
+    linear-gradient(165deg, #EFEADC 0%, #F8F5EE 60%);}
+  .hero .wrap{display:grid; grid-template-columns:1.05fr 0.95fr; gap:60px; align-items:center;}
+  .eyebrow{display:inline-flex; align-items:center; gap:10px; font-size:12.5px; letter-spacing:2px; text-transform:uppercase; color:var(--gold-deep); font-weight:700; margin-bottom:22px;}
+  .eyebrow::before{content:""; width:28px; height:1px; background:var(--gold-deep);}
+  .hero h1{font-size:50px; line-height:1.15; color:var(--ink); margin-bottom:22px;}
+  .hero h1 em{font-style:italic; color:var(--gold-deep);}
+  .hero p{font-size:17.5px; line-height:1.75; color:var(--ink-soft); max-width:480px; margin-bottom:34px;}
+  .btn-row{display:flex; gap:16px; flex-wrap:wrap;}
+  .btn-primary{background:var(--ink); color:#fff; padding:16px 30px; border-radius:100px; font-weight:600; font-size:14.5px; box-shadow:0 10px 24px rgba(31,36,31,0.18); display:inline-block;}
+  .btn-ghost{border:1.5px solid var(--ink); color:var(--ink); padding:16px 30px; border-radius:100px; font-weight:600; font-size:14.5px; display:inline-block;}
+
+  .hero-art{position:relative; height:400px;}
+  .hero-art svg{width:100%; height:100%;}
+  @keyframes driftA{0%,100%{transform:translateY(0);} 50%{transform:translateY(-14px);}}
+  @keyframes driftB{0%,100%{transform:translateY(0);} 50%{transform:translateY(12px);}}
+  .drift-a{transform-box:fill-box; transform-origin:center; animation:driftA 7s ease-in-out infinite;}
+  .drift-b{transform-box:fill-box; transform-origin:center; animation:driftB 8s ease-in-out infinite .4s;}
+  @media (prefers-reduced-motion: reduce){.drift-a,.drift-b{animation:none;}}
+
+  /* STAT STRIP */
+  .stats{background:var(--ink); padding:40px 0;}
+  .stats .wrap{display:flex; justify-content:space-between; flex-wrap:wrap; gap:30px;}
+  .stat{color:#fff; flex:1; min-width:200px;}
+  .stat-num{font-family:'Playfair Display',serif; font-size:30px; color:var(--gold); font-weight:700;}
+  .stat-label{font-size:13px; color:#C9C6BC; margin-top:4px; line-height:1.5;}
+
+  /* SERVICES */
+  .services{padding:110px 0; background:#fff;}
+  .section-head{text-align:center; max-width:620px; margin:0 auto 60px;}
+  .section-head h2{font-size:36px; margin-bottom:16px;}
+  .section-head p{color:#6B6A5F; font-size:16px; line-height:1.7;}
+  .pkg-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:28px;}
+  .pkg-card{border:1.5px solid var(--line); border-radius:20px; padding:36px 30px; display:flex; flex-direction:column;}
+  .pkg-card.featured{border-color:var(--gold); background:linear-gradient(170deg,#FBF7EC 0%, #fff 55%); position:relative;}
+  .pkg-badge{position:absolute; top:-13px; left:30px; background:var(--gold-deep); color:#fff; font-size:11px; font-weight:700; letter-spacing:0.5px; text-transform:uppercase; padding:5px 14px; border-radius:100px;}
+  .pkg-name{font-size:21px; margin-bottom:8px;}
+  .pkg-price{font-family:'Playfair Display',serif; font-size:28px; color:var(--gold-deep); font-weight:700; margin-bottom:18px;}
+  .pkg-price span{font-size:13px; color:#8A8778; font-family:'Inter',sans-serif; font-weight:500;}
+  .pkg-list{list-style:none; margin-bottom:28px; flex:1;}
+  .pkg-list li{font-size:14.5px; color:var(--ink-soft); line-height:1.6; padding-left:22px; position:relative; margin-bottom:12px;}
+  .pkg-list li::before{content:"✓"; position:absolute; left:0; color:var(--sage); font-weight:700;}
+  .pkg-cta{text-align:center; padding:13px; border-radius:100px; font-weight:600; font-size:13.5px; border:1.5px solid var(--ink); color:var(--ink);}
+  .pkg-card.featured .pkg-cta{background:var(--ink); color:#fff;}
+
+  /* WHY HUMAN */
+  .why{padding:100px 0; background:var(--cream);}
+  .why .wrap{display:grid; grid-template-columns:0.9fr 1.1fr; gap:60px; align-items:center;}
+  .why h2{font-size:34px; margin-bottom:20px;}
+  .why p{font-size:16px; line-height:1.8; color:var(--ink-soft); margin-bottom:16px;}
+  .why-stats{display:grid; grid-template-columns:1fr 1fr; gap:20px;}
+  .why-card{background:#fff; border-radius:16px; padding:26px; border:1px solid var(--line);}
+  .why-num{font-family:'Playfair Display',serif; font-size:26px; color:var(--gold-deep); font-weight:700; margin-bottom:6px;}
+  .why-label{font-size:13px; color:#6B6A5F; line-height:1.5;}
+
+  /* CASE STUDY */
+  .case{padding:110px 0; background:#fff;}
+  .case-card{display:grid; grid-template-columns:1fr 1fr; border-radius:24px; overflow:hidden; border:1px solid var(--line); box-shadow:0 20px 50px rgba(31,36,31,0.08);}
+  .case-visual{background:linear-gradient(150deg,#55684B 0%, #3E4E36 100%); padding:50px; display:flex; flex-direction:column; justify-content:center; color:#fff;}
+  .case-visual .tag{font-size:12px; letter-spacing:1.5px; text-transform:uppercase; color:#D9E3CE; margin-bottom:14px; font-weight:700;}
+  .case-visual h3{font-size:30px; color:#fff; margin-bottom:14px;}
+  .case-visual p{color:#E3E9DC; font-size:15px; line-height:1.7;}
+  .case-info{padding:50px; display:flex; flex-direction:column; justify-content:center;}
+  .case-info h4{font-size:14px; letter-spacing:0.5px; text-transform:uppercase; color:var(--gold-deep); font-weight:700; margin-bottom:16px;}
+  .case-info ul{list-style:none; margin-bottom:28px;}
+  .case-info li{font-size:15px; color:var(--ink-soft); margin-bottom:12px; padding-left:22px; position:relative;}
+  .case-info li::before{content:"—"; position:absolute; left:0; color:var(--gold-deep);}
+  .case-info a.btn-primary{align-self:flex-start;}
+
+  /* CONTACT */
+  .contact{padding:110px 0; background:linear-gradient(135deg, var(--ink) 0%, #2B322A 100%); color:#fff; text-align:center;}
+  .contact .wrap{max-width:620px;}
+  .contact .eyebrow{color:#D9D4C0;}
+  .contact .eyebrow::before{background:#D9D4C0;}
+  .contact h2{font-size:38px; margin-bottom:16px; color:#fff;}
+  .contact p{font-size:16px; color:#D7D4C8; line-height:1.7; margin-bottom:38px;}
+  .contact-cta{background:var(--gold); color:var(--ink); padding:18px 38px; border-radius:100px; font-weight:700; font-size:16px; display:inline-block;}
+  .contact-note{margin-top:20px; font-size:12.5px; color:#A9A594;}
+  /* CALENDLY_SLOT: swap .contact-cta block for a Calendly inline embed/link once the free account exists */
+
+  /* FOOTER */
+  footer{background:#161916; color:#9F9C92; padding:50px 0 30px; text-align:center;}
+  .foot-logo{font-family:'Playfair Display',serif; font-size:19px; color:#fff; margin-bottom:10px;}
+  footer p{font-size:13px; line-height:1.9;}
+  footer a{color:#C9C6BC;}
+
+  @media (max-width: 900px){
+    .hero .wrap, .why .wrap, .case-card{grid-template-columns:1fr;}
+    .pkg-grid{grid-template-columns:1fr;}
+    .navlinks{display:none;}
+    .hero h1{font-size:38px;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="logo">AMADI <span>LEAKS</span></div>
+    <div class="navlinks">
+      <a href="#services">Services</a>
+      <a href="#work">Sample Work</a>
+      <a href="#why">Why Human</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a href="#contact" class="nav-cta">Book a Strategy Session</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">Content & Ghostwriting Studio</div>
+      <h1>Your business deserves to be <em>found</em> — and sound like itself.</h1>
+      <p>I write blogs, newsletters, and LinkedIn content for small businesses whose websites have gone quiet. Real posts, written by a real person who's actually paying attention — not AI filler, not a generic template.</p>
+      <div class="btn-row">
+        <a href="#contact" class="btn-primary">Book a Free Strategy Session</a>
+        <a href="#work" class="btn-ghost">See Sample Work</a>
+      </div>
+    </div>
+    <div class="hero-art">
+      <svg viewBox="0 0 400 420" xmlns="http://www.w3.org/2000/svg">
+        <circle class="drift-a" cx="150" cy="150" r="100" fill="#C9A24B" opacity="0.18"/>
+        <circle class="drift-b" cx="260" cy="260" r="130" fill="#6E8266" opacity="0.2"/>
+        <path d="M110 300 L110 110 L290 110" stroke="#1F241F" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.65"/>
+        <path d="M150 230 h110 M150 260 h90 M150 290 h110" stroke="#A47F2E" stroke-width="4" fill="none" stroke-linecap="round"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="stats">
+  <div class="wrap">
+    <div class="stat"><div class="stat-num">5.44x</div><div class="stat-label">more organic traffic for human-written content vs. AI-generated</div></div>
+    <div class="stat"><div class="stat-num">$13</div><div class="stat-label">average return per $1 spent on local SEO content</div></div>
+    <div class="stat"><div class="stat-num">80%</div><div class="stat-label">of #1 Google rankings go to human-written content, not AI</div></div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Simple packages. No contracts to get lost in.</h2>
+      <p>Pick a starting point. Every package starts with a free strategy session — no cost, no pressure, just a real conversation about what your business needs.</p>
+    </div>
+    <div class="pkg-grid">
+      <div class="pkg-card">
+        <div class="pkg-name">Relaunch Sprint</div>
+        <div class="pkg-price">$500–$900 <span>one-time</span></div>
+        <ul class="pkg-list">
+          <li>3 blog posts, written for your real voice</li>
+          <li>1 sample newsletter issue</li>
+          <li>A concrete before/after concept to show what's possible</li>
+          <li>No ongoing commitment required</li>
+        </ul>
+        <a href="#contact" class="pkg-cta">Start Here</a>
+      </div>
+      <div class="pkg-card featured">
+        <div class="pkg-badge">Most Popular</div>
+        <div class="pkg-name">Blog + Newsletter Bundle</div>
+        <div class="pkg-price">$400–$600 <span>/ month</span></div>
+        <ul class="pkg-list">
+          <li>2 blog posts every month</li>
+          <li>1 monthly newsletter issue, ready to send</li>
+          <li>Ongoing voice & strategy consistency</li>
+          <li>Cancel anytime, no long-term lock-in</li>
+        </ul>
+        <a href="#contact" class="pkg-cta">Book a Session</a>
+      </div>
+      <div class="pkg-card">
+        <div class="pkg-name">LinkedIn Add-On</div>
+        <div class="pkg-price">$300–$600 <span>/ month</span></div>
+        <ul class="pkg-list">
+          <li>4 LinkedIn posts/month in your voice</li>
+          <li>Built for owner-operators, not faceless brands</li>
+          <li>Pairs with either package above</li>
+          <li>Fastest-growing content channel right now</li>
+        </ul>
+        <a href="#contact" class="pkg-cta">Add It On</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="why" id="why">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">Why this, why now</div>
+      <h2>The internet is flooded with AI content. That's your opening.</h2>
+      <p>Half of everything published online now is AI-generated — which means readers (and Google) are actively hunting for the real thing. Human-written content outperforms AI content on nearly every measurable front.</p>
+      <p>I'm not a content mill. I actually read your site, learn your story, and write like I've been paying attention — because I have.</p>
+    </div>
+    <div class="why-stats">
+      <div class="why-card"><div class="why-num">61%</div><div class="why-label">fewer editorial backlinks earned by pure-AI content vs. human writing</div></div>
+      <div class="why-card"><div class="why-num">46%</div><div class="why-label">of Google searches now carry local intent — up from 30% in 2019</div></div>
+      <div class="why-card"><div class="why-num">200–500%</div><div class="why-label">median ROI small businesses see from local content investment within 12 months</div></div>
+      <div class="why-card"><div class="why-num">65%</div><div class="why-label">of small businesses have an incomplete or unoptimized online presence today</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="case" id="work">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>See it in action</h2>
+      <p>Rather than just tell you what I'd do, I built a full sample relaunch — unprompted — for a real small business.</p>
+    </div>
+    <div class="case-card">
+      <div class="case-visual">
+        <div class="tag">Case Study · Sample Work</div>
+        <h3>Art of Yoga, Columbus GA</h3>
+        <p>A full relaunch concept: redesigned homepage, three complete blog posts, and a sample monthly newsletter issue — built to show exactly what a content refresh can look like for a business whose site had gone quiet.</p>
+      </div>
+      <div class="case-info">
+        <h4>What's included in this sample</h4>
+        <ul>
+          <li>Full homepage redesign with brand-appropriate visual identity</li>
+          <li>3 complete, ready-to-publish blog posts</li>
+          <li>1 full newsletter issue, styled like a real send</li>
+          <li>Built in days, not weeks — using the exact process every client gets</li>
+        </ul>
+        <a href="work/art-of-yoga/index.html" class="btn-primary">View the Full Sample →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="eyebrow" style="justify-content:center; display:flex;">Let's Talk</div>
+    <h2>Book your free strategy session</h2>
+    <p>No pitch deck, no pressure — just a real conversation about your business, your voice, and whether this is a good fit. Takes 20 minutes.</p>
+    <a href="mailto:amadileaks@gmail.com?subject=Strategy%20Session%20Request&body=Hi%20Amadi%2C%0D%0A%0D%0AI'd%20like%20to%20book%20a%20free%20strategy%20session.%20Here's%20a%20bit%20about%20my%20business%3A%0D%0A%0D%0ABusiness%20name%3A%0D%0AWebsite%3A%0D%0ABest%20time%20to%20connect%3A%0D%0A%0D%0A" class="contact-cta">Email to Book a Session</a>
+    <div class="contact-note">Replies within 1 business day · amadileaks@gmail.com</div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-logo">Amadi Leaks</div>
+    <p>Blog, newsletter & ghostwriting services for small businesses.<br>
+    <a href="mailto:amadileaks@gmail.com">amadileaks@gmail.com</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
